@@ -52,12 +52,6 @@
 		</dependency-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-thin-wrapper</artifactId>
-			<version>${wrapper.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -73,32 +67,12 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.5.5</version>
-				<executions>
-					<execution>
-						<id>stub</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<inherited>false</inherited>
-						<configuration>
-							<attach>true</attach>
-							<appendAssemblyId>false</appendAssemblyId>
-							<descriptor>${basedir}/src/assembly/app.xml</descriptor>
-							<archive>
-								<manifest>
-									<mainClass>org.springframework.boot.loader.wrapper.ThinJarWrapper</mainClass>
-								</manifest>
-								<manifestEntries>
-									<Start-Class>com.example.LauncherApplication</Start-Class>
-								</manifestEntries>
-							</archive>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${wrapper.version}</version>
+				<configuration>
+					<layout>THIN</layout>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
