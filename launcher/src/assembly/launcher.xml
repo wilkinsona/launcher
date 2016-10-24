@@ -10,7 +10,7 @@
 			<includes>
 				<include>org.springframework.boot:spring-boot-loader:*</include>
 				<include>org.springframework.boot:spring-boot-loader-tools:*</include>
-				<include>org.springframework.boot:spring-boot-cli:*</include>
+				<include>org.springframework.boot:spring-boot-aether:*</include>
 				<include>commons-logging:commons-logging:*</include>
 			</includes>
 			<unpack>true</unpack>
