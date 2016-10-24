@@ -15,7 +15,6 @@
 	<name>Thin Launcher Parent</name>
 
 	<modules>
-		<module>launcher</module>
 		<module>capsule-app</module>
 		<module>app</module>
 		<module>simple</module>
